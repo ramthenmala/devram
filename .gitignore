@@ -1,0 +1,56 @@
+# Node modules
+node_modules/
+
+# pnpm specific
+.pnpm/
+
+# Build output
+.next/
+out/
+
+# Sanity.io specific
+sanity-build/
+sanity-export/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dependency directories
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Misc
+*.swp
+*.swo
+*.swn
+
+# Yarn (if using yarn alongside pnpm)
+.yarn/
+.yarnrc.yml
+
+# Next.js and pnpm workspace
+/.next/
+/out/
+/pnpm-lock.yaml
+
+# Coverage
+coverage/
