@@ -15,4 +15,4 @@ This README provides a guide for setting up and running a web application that u
 ---
 
 ## Project Overview
-This project uses **Sanity.io** for creating, managing, and storing content, while **Next.js** is used to build a performant and scalable frontend that consumes the content from the Sanity CMS. The application will be able to fetch, display, and manage content from Sanity using the Next.js framework.
+This project uses **Sanity.io** for creating, managing, and storing content, while **Next.js** is used to build a performant and scalable frontend that consumes the content from the Sanity CMS. 
