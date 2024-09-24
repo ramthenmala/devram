@@ -29,10 +29,9 @@ const techStack = [
     { name: 'PostgreSQL', icon: <SiPostgresql className="w-8 h-8 text-blue-700 dark:text-blue-500" /> },
     { name: 'MongoDB', icon: <SiMongodb className="w-8 h-8 text-green-700 dark:text-green-500" /> },
     { name: 'SCSS', icon: <SiSass className="w-8 h-8 text-pink-500 dark:text-pink-300" /> },
-    { name: 'LESS', icon: <SiLess className="w-8 h-8 text-blue-600 dark:text-blue-400" /> },
-    { name: 'styled-components', icon: <SiStyledcomponents className="w-8 h-8 text-pink-600 dark:text-pink-400" /> },
+    { name: 'LESS', icon: <SiLess className="w-12 h-12 text-blue-600 dark:text-blue-400" /> }, // Double size
+    { name: 'styled-components', icon: <SiStyledcomponents className="w-12 h-12 text-pink-600 dark:text-pink-400" /> }, // Double size
 ];
-
 
 function TechStack() {
     return (

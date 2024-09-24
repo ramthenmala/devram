@@ -17,7 +17,7 @@ interface CardProps {
     };
     index: number;
     layout?: boolean;
-    isFeatured?: boolean; 
+    isFeatured?: boolean;
 }
 
 export const Card = ({ card, isFeatured }: CardProps) => {
@@ -26,7 +26,7 @@ export const Card = ({ card, isFeatured }: CardProps) => {
             className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden relative block"
             layoutId={card.title}
         >
-            <div className="absolute inset-x-0 h-full bg-gradient-to-b from-black/50 z-30" />
+            <div className="absolute inset-x-0 h-full bg-gradient-to-b from-black/20 z-30" />
             <div className="relative z-40 p-8 flex flex-col justify-between h-full">
                 <div>
                     <motion.p
@@ -84,7 +84,9 @@ export const Card = ({ card, isFeatured }: CardProps) => {
                 src={card.src}
                 alt={card.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover absolute inset-0"
+                priority
             />
         </motion.div>
     );
