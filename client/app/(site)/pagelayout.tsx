@@ -1,6 +1,5 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header/Header";
-import CTASection from '../../components/CTASection'
 
 type PageLayoutProps = {
     children: React.ReactNode,
@@ -14,8 +13,6 @@ function PageLayout(props: PageLayoutProps) {
             <Header />
             <main className="flex-1">
                 {children}
-
-                <CTASection /> <br />
             </main>
             <Footer />
         </div>

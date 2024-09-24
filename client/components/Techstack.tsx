@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion"; // Import framer motion
+import { motion } from "framer-motion";
 import { CloudIcon } from '@heroicons/react/24/outline';
 import {
     SiTypescript,
@@ -12,6 +12,9 @@ import {
     SiGooglecloud,
     SiPostgresql,
     SiMongodb,
+    SiSass,     
+    SiLess,     
+    SiStyledcomponents,
 } from 'react-icons/si';
 
 const techStack = [
@@ -25,7 +28,11 @@ const techStack = [
     { name: 'GCP', icon: <CloudIcon className="w-8 h-8 text-blue-500 dark:text-blue-400" /> },
     { name: 'PostgreSQL', icon: <SiPostgresql className="w-8 h-8 text-blue-700 dark:text-blue-500" /> },
     { name: 'MongoDB', icon: <SiMongodb className="w-8 h-8 text-green-700 dark:text-green-500" /> },
+    { name: 'SCSS', icon: <SiSass className="w-8 h-8 text-pink-500 dark:text-pink-300" /> },
+    { name: 'LESS', icon: <SiLess className="w-8 h-8 text-blue-600 dark:text-blue-400" /> },
+    { name: 'styled-components', icon: <SiStyledcomponents className="w-8 h-8 text-pink-600 dark:text-pink-400" /> },
 ];
+
 
 function TechStack() {
     return (
