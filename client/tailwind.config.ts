@@ -20,13 +20,12 @@ const config: Config = {
   },
   plugins: [
     require('@tailwindcss/typography'),
-    function ({ addComponents, theme }) {
+    function ({ addComponents, theme }: { addComponents: (components: Record<string, any>) => void, theme: (path: string) => string }) {
       addComponents({
         '.prose-dark': {
           '--tw-prose-body': theme('colors.prose-dark-text'),
           '--tw-prose-headings': theme('colors.prose-dark-headings'),
           '--tw-prose-links': theme('colors.prose-dark-text'),
-          // Add more custom styles if needed
         },
       });
     },
