@@ -163,7 +163,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
 
           <div className="flex space-x-4">
             <a
-              href="mailto:someone@example.com"
+              href="mailto:devramthenmala@gmail.com"
               className="btn btn-primary"
             >
               <span>Message</span>
