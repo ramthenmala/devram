@@ -2,7 +2,7 @@
 
 import { PortableText } from '@portabletext/react';
 import { motion } from 'framer-motion';
-import Hero from '@/components/Hero';
+import SEOHead from "@/components/SEOHead";
 import client from '@/client';
 import PageLayout from '../pagelayout';
 
@@ -25,6 +25,11 @@ const AboutPage = async () => {
 
   return (
     <PageLayout>
+      <SEOHead
+        title="About Us | Ram's Portfolio"
+        description="Learn more about Ram, a JavaScript Developer passionate about modern web technologies."
+        url="https://devram.vercel.app/about"
+      />
       <section className="mx-auto max-w-4xl px-2">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

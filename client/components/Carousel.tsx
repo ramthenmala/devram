@@ -45,7 +45,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         <div className="relative w-full overflow-hidden">
             <div
                 className={twCn(
-                    "flex w-full overflow-x-scroll py-10 md:py-20 scroll-smooth",
+                    "flex w-full overflow-x-scroll py-10 md:pb-20 scroll-smooth",
                     "scrollbar-hide"
                 )}
                 ref={carouselRef}

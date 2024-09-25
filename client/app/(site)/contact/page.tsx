@@ -1,10 +1,15 @@
 import React from 'react';
-import Hero from '@/components/Hero';
+import SEOHead from "@/components/SEOHead";
 import PageLayout from '../pagelayout';
 
 const Contact: React.FC = () => {
   return (
     <PageLayout>
+      <SEOHead
+        title="Contact Us | Ram's Portfolio"
+        description="Get in touch with Ram, a JavaScript Developer."
+        url="https://devram.vercel.app/contact"
+      />
       <section className="mx-auto max-w-4xl px-4 pt-16 text-center">
         <div className="text-gray-900 dark:text-prose-dark-text">
           <p className="text-lg font-medium mb-4 mt-4">

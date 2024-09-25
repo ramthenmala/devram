@@ -4,9 +4,10 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { solarizedDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import client from '@/client';
 import PageLayout from '@/app/(site)/pagelayout';
-import { calculateReadingTime, portableTextToPlainText } from '../../lib/Utils'; 
-import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/outline'; 
-import Breadcrumbs from '../../../components/Breadcrumbs'
+import { calculateReadingTime, portableTextToPlainText } from '../../lib/Utils';
+import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import Breadcrumbs from '../../../components/Breadcrumbs';
+import SEOHead from '@/components/SEOHead'; 
 
 interface Author {
   name: string;
@@ -78,6 +79,32 @@ const fetchPost = async (slug: string) => {
   return post;
 };
 
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const post: PostProps = await fetchPost(params.slug);
+
+  return {
+    title: post.title,
+    description: `Read ${post.title} by ${post.author.name}. Published on ${new Date(post.publishedAt).toLocaleDateString()}`,
+    openGraph: {
+      title: post.title,
+      description: `Read ${post.title} by ${post.author.name}.`,
+      url: `https://devram.vercel.app/blog/${params.slug}`,
+      images: [
+        {
+          url: post.mainImage?.asset.url || '/default-image.jpg',
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: `Read ${post.title} by ${post.author.name}.`,
+      images: [post.mainImage?.asset.url || '/default-image.jpg'],
+    },
+  };
+}
+
 const Post = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
   const post: PostProps = await fetchPost(slug);
@@ -97,6 +124,13 @@ const Post = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <PageLayout>
+      <SEOHead
+        title={post.title}
+        description={`Read ${post.title} by ${post.author.name}. Published on ${new Date(post.publishedAt).toLocaleDateString()}`}
+        url={`https://yourwebsite.com/blog/${slug}`}
+        image={post.mainImage?.asset.url || '/default-image.jpg'}
+      />
+
       <section className="mx-auto max-w-4xl px-4 pb-10">
         <Breadcrumbs
           items={[
@@ -105,7 +139,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
             { label: post.title }
           ]}
         />
-        
+
         <h1 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">{post.title}</h1>
 
         <div className="flex items-center justify-between mb-8">

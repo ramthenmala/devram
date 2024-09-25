@@ -69,7 +69,7 @@ export function BlogList() {
                 ),
                 author: {
                     name: post.author.name,
-                    avatarSrc: post.author.avatar?.asset?.url || "/default-avatar.png",
+                    avatarSrc: "/default-avatar.jpg",
                 },
                 readTime: 5,
                 url: `/blog/${post.slug.current}`,

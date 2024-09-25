@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import Hero from "@/components/Hero";
 import client from '@/client';
 import { PortableTextBlock } from '@/types/portableText';
@@ -9,6 +9,7 @@ import PageLayout from "@/app/(site)/pagelayout";
 import { calculateReadingTime, portableTextToPlainText } from "../lib/Utils";
 import Image from 'next/image';
 import Link from 'next/link';
+import SEOHead from "@/components/SEOHead";
 
 interface BlogPost {
   title: string;
@@ -97,9 +98,15 @@ const BlogPage = () => {
 
   return (
     <PageLayout>
+      <SEOHead
+        title="Blog | Ram's Portfolio"
+        description="Explore my blog where I share insights and tutorials on JavaScript, web development, and tech trends."
+        url="https://devram.vercel.app/blog"
+        image="https://devram.vercel.app/default-avatar.jpg"
+      />
       <Hero
         title="Blog"
-        description="Front-End Engineer with proven experience at TCS, Pit Solutions, and DoubleSpring in helping companies create and maintain a better code base for reusability."
+        description="I'm a seasoned developer with over 12 years of experience working within the dynamic JavaScript ecosystem. My expertise spans a range of cutting-edge technologies, including TypeScript, React, Next.js, Node.js, Docker, Kubernetes, and cloud platforms like GCP."
       />
 
       <section className="mx-auto max-w-4xl px-4 py-10">
