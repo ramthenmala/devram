@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { PlayIcon, PauseIcon } from '@heroicons/react/24/outline';
+import { PlayIcon, PauseIcon } from "@radix-ui/react-icons";
 
 interface ListenButtonProps {
     text: string;
@@ -68,13 +68,13 @@ const ListenButton: React.FC<ListenButtonProps> = ({ text }) => {
         <div>
             <button
                 onClick={handlePlayPause}
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-500 hover:bg-black  transition duration-200"
+                className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-500 hover:bg-black transition duration-200"
                 aria-label={isPlaying ? 'Pause audio' : 'Play audio'}
             >
                 {isPlaying ? (
                     <PauseIcon className="h-6 w-6 text-gray-500 hover:text-white" />
                 ) : (
-                        <PlayIcon className="h-6 w-6 text-gray-500 hover:text-white" />
+                    <PlayIcon className="h-6 w-6 text-gray-500 hover:text-white" />
                 )}
             </button>
         </div>

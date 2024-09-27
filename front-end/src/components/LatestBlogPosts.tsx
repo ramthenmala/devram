@@ -1,9 +1,9 @@
 import React from 'react';
-import client from '../../client'; // Adjust the path as necessary
 import Link from 'next/link';
-import { PortableTextBlock } from '@/types/portableText';
+import client from '../../client';
 import { calculateReadingTime, portableTextToPlainText } from '@/lib/utils';
 import BlurFade from "@/components/magicui/blur-fade";
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 
 interface BlogPost {
     title: string;
@@ -16,7 +16,7 @@ interface BlogPost {
             url: string;
         };
     };
-    body: PortableTextBlock[];
+    body: any[];
     author?: {
         name: string;
         avatarSrc?: string;
@@ -24,7 +24,6 @@ interface BlogPost {
     readTime?: number;
 }
 
-// Fetching the last 5 blog posts
 const fetchLatestBlogPosts = async (): Promise<BlogPost[]> => {
     const query = `
     *[_type == "post"] | order(publishedAt desc) {
@@ -81,10 +80,13 @@ const LatestBlogPosts: React.FC = async () => {
                 ))}
             </div>
 
-            <div className="mt-4">
-                <BlurFade delay={0.04 * 13} >
-                    <Link href="/blog" className="text-blue-500 hover:underline">
+            <div className="mt-4 text-center">
+                <BlurFade delay={0.04 * 13}>
+                    <Link href="/blog"
+                        className="text-gray-500 hover:text-gray-700 transition-colors duration-300 flex items-center justify-center" 
+                    >
                         View All Posts
+                        <ArrowRightIcon className="ml-2" />
                     </Link>
                 </BlurFade>
             </div>

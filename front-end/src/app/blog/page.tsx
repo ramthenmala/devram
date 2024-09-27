@@ -1,8 +1,38 @@
 import client from '../../../client';
 import Link from 'next/link';
-import { PortableTextBlock } from '@/types/portableText';
 import { calculateReadingTime, portableTextToPlainText } from '@/lib/utils';
 import BlurFade from "@/components/magicui/blur-fade";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ram's Tech Blog | Insights on JavaScript & Web Development",
+  description: "Explore Ram's blog for insightful articles on JavaScript, web development trends, coding tutorials, and personal growth experiences.",
+  keywords: "JavaScript, Web Development, Tech Blog, Coding, Programming, Software Engineering, Personal Growth, Tutorials, Technology Insights",
+  authors: [{ name: "Ram", url: "https://twitter.com/ramthenmala" }],
+  openGraph: {
+    title: "Ram's Tech Blog | Insights on JavaScript & Web Development",
+    description: "Join Ram as he shares his journey in tech, offering valuable insights and tutorials on JavaScript and web development.",
+    url: "https://devram.vercel.app/blog",
+    siteName: "Ram's Tech Blog",
+    images: [
+      {
+        url: "https://devram.vercel.app/default-avatar.jpg",
+        width: 800,
+        height: 600,
+        alt: "Blog post illustration",
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ram's Tech Blog | Insights on JavaScript & Web Development",
+    description: "Discover articles and insights from Ram's tech journey, focusing on JavaScript and web development.",
+    images: ["https://devram.vercel.app/default-avatar.jpg"],
+    site: "@ramthenmala",
+  },
+};
 
 interface BlogPost {
   title: string;
@@ -15,7 +45,7 @@ interface BlogPost {
       url: string;
     };
   };
-  body: PortableTextBlock[];
+  body: any[];
   author?: {
     name: string;
     avatarSrc?: string;

@@ -3,11 +3,13 @@ import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { tomorrowNightBright } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, ArrowLeftIcon } from '@radix-ui/react-icons';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { calculateReadingTime, portableTextToPlainText } from '@/lib/utils';
 import BlurFade from "@/components/magicui/blur-fade";
 import ListenButton from '@/components/ListenButton';
+import type { Metadata } from 'next';
+
 
 interface Author {
   name: string;
@@ -28,7 +30,6 @@ interface PostProps {
   };
   author: Author;
   publishedAt: string;
-  readTime?: number;
   nextPost?: {
     title: string;
     slug: {
@@ -43,6 +44,7 @@ interface PostProps {
   };
 }
 
+// Fetch post data
 const fetchPost = async (slug: string) => {
   const query = `*[_type == "post" && slug.current == $slug][0]{
     title,
@@ -79,22 +81,48 @@ const fetchPost = async (slug: string) => {
   return post;
 };
 
-const speakText = (text: string) => {
-  const speech = window.speechSynthesis;
-  const speechUtterance = new SpeechSynthesisUtterance(text);
+// Generate metadata dynamically
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const post: PostProps = await fetchPost(params.slug);
 
-  speechUtterance.rate = 1;
-  speechUtterance.pitch = 1;
+  if (!post) {
+    return {
+      title: "Post not found | Ram's Tech Blog",
+      description: "The blog post you are looking for does not exist.",
+    };
+  }
 
-  speech.speak(speechUtterance);
-};
+  return {
+    title: `${post.title} | Ram's Tech Blog`,
+    description: `Read "${post.title}" by ${post.author.name}. Discover insights on JavaScript, web development, and coding tutorials.`,
+    openGraph: {
+      title: `${post.title} | Ram's Tech Blog`,
+      description: `Read "${post.title}" by ${post.author.name}. Discover insights on JavaScript, web development, and coding tutorials.`,
+      images: [
+        {
+          url: post.mainImage?.asset.url || '/default-image.jpg', // Provide a default image if none exists
+          width: 1200,
+          height: 600,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} | Ram's Tech Blog`,
+      description: `Check out "${post.title}" written by ${post.author.name}.`,
+      images: [post.mainImage?.asset.url || '/default-image.jpg'],
+    },
+  };
+}
 
 export default async function Blog({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const post: PostProps = await fetchPost(slug);
 
   if (!post) {
-    // return notFound();
+    // Optionally handle post not found
+    return null; // or a not found component
   }
 
   const readTime = calculateReadingTime(portableTextToPlainText(post.body));
@@ -202,7 +230,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
               href={`/blog/${post.previousPost.slug.current}`}
               className="flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 hover:border-gray-600 dark:hover:border-gray-400 transition-colors duration-200 ease-in-out"
             >
-              <ArrowLongLeftIcon className="h-5 w-5" />
+              <ArrowLeftIcon className="h-5 w-5" />
               <span>Previous: {post.previousPost.title}</span>
             </a>
           </BlurFade>
@@ -214,7 +242,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
               className="flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 hover:border-gray-600 dark:hover:border-gray-400 transition-colors duration-200 ease-in-out"
             >
               <span>Next: {post.nextPost.title}</span>
-              <ArrowLongRightIcon className="h-5 w-5" />
+              <ArrowRightIcon className="h-5 w-5" />
             </a>
           </BlurFade>
         )}

@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Full Stack Software Engineer skilled in Node.js, JavaScript, React, and Next.js. Passionate about building solutions and supporting others.",
   summary:
-    "I work with the JavaScript ecosystem. Welcome to my small piece of the internet, where I write and share about different topics related to the tech industry and lifestyle.",
+    "I am a passionate developer specializing in innovative digital solutions that enhance user experiences. Proficient in React.js, Next.js, D3.js, and Node.js, I create responsive applications and interactive e-learning features using HTML, CSS, and JavaScript. Committed to code quality, I focus on refactoring and thorough documentation. I believe in mentorship and collaboration to foster growth, continuously seeking new challenges to improve my skills and contribute to impactful projects.",
   avatarUrl: "/ramkumar-narayana-swamy.jpg",
   skills: [
     "React",
@@ -83,7 +83,7 @@ export const DATA = {
       start: "Sep 2019",
       end: "Present",
       description:
-        "Building and leading a team of 10 development professionals Provide technical leadership to teammates through coaching and mentorship Identify and encourage areas for growth and improvement within the team Prepare reports, manuals and other documentation on the status, operation and maintenance of the code",
+        "I successfully led a team of 10 development professionals, fostering collaboration and innovation. I provided technical leadership through mentorship in Node.js and React.js, encouraging growth in skills like React Testing Library. Additionally, I prepared detailed documentation and reports on code status and maintenance, ensuring clarity and accessibility for the team.",
     },
     {
       company: "PIT Solutions",
@@ -95,7 +95,7 @@ export const DATA = {
       start: "Aug 2015",
       end: "Aug 2019",
       description:
-        "Leading a team of 8 development professionals Front-End architecture and research for Sharjah Police website and HRMS in React Extensively used Reactjs, D3.Js, and Node JS for JavaScript object and array manipulations. Building a secure, scalable, reliable & extensible web application for Web and tablet devices using Reactjs, Nextjs, and CSS",
+        "Led a team of 8 development professionals in designing the front-end architecture and conducting research for the Sharjah Police website and HR Management System (HRMS) using React. I extensively utilized React.js, D3.js, and Node.js for JavaScript object and array manipulations. Additionally, I focused on building a secure, scalable, reliable, and extensible web application for both web and tablet devices using React.js, Next.js, and CSS.",
     },
     {
       company: "DoubleSpring Media",
@@ -107,7 +107,7 @@ export const DATA = {
       start: "Aug 2013",
       end: "Aug 2015",
       description:
-        "Develop fully functional responsive prototypes API integrations, Code refactoring Creating technical specifications Writing operational documentation with technical authors.",
+        "Developed fully functional, responsive prototypes while implementing API integrations and performing code refactoring. Collaborated with technical authors to create detailed technical specifications and write comprehensive operational documentation.",
     },
     {
       company: "OptioLogic Technologies Pvt Ltd",
@@ -119,7 +119,7 @@ export const DATA = {
       start: "Apr 2012",
       end: "Aug 2013",
       description:
-        "Developing new e-learning features in HTML, CSS, Javascript and Preparing the documentation Design and develop highly interactive e-learnin coursesDeveloping new e-learning features in HTML, CSS, Javascript and Preparing the documentation Design and develop highly interactive e-learnin courses",
+        "Designed and developed new e-learning features using HTML, CSS, and JavaScript while preparing thorough documentation. Focused on creating highly interactive e-learning courses to enhance user engagement and learning experiences.",
     },
   ],
   education: [
