@@ -154,7 +154,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
         <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">{post.title}</h1>
       </BlurFade>
 
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-col md:flex-row items-center justify-between mb-8 space-y-4 md:space-y-0 md:space-x-4">
         <BlurFade delay={0.06}>
           <div className="flex items-center space-x-4">
             {post.author.image && (

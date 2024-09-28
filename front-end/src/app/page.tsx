@@ -64,7 +64,7 @@ export default function Page() {
                 />
               </div>
               <BlurFade delay={BLUR_FADE_DELAY}>
-                <Avatar className="size-40 border">
+                <Avatar className="size-20 md:size-44 border">
                   <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
                   <AvatarFallback>{DATA.initials}</AvatarFallback>
                 </Avatar>
@@ -210,27 +210,37 @@ export default function Page() {
           <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
             <BlurFade delay={BLUR_FADE_DELAY * 16}>
               <div className="space-y-3">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                <div
+                  className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm"
+                  style={{ backgroundColor: "#222222", color: "#ffffff" }}
+                >
                   Contact
                 </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                <h2
+                  className="text-3xl font-bold tracking-tighter sm:text-5xl"
+                  style={{ color: "#1a1a1a" }}
+                >
                   Get in Touch
                 </h2>
-                <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Want to chat? Just shoot me a dm{" "}
+                <p
+                  className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+                  style={{ color: "#4d4d4d" }}
+                >
+                  Feel free to drop me a DM{" "}
                   <Link
                     href={DATA.contact.social.X.url}
                     className="text-blue-500 hover:underline"
+                    style={{ textDecoration: "underline", color: "#0066cc" }}
                   >
-                    with a direct question on Twitter
-                  </Link>{" "}
-                  and I&apos;ll respond whenever I can. I will ignore all
-                  soliciting.
+                    with any direct questions on twitter
+                  </Link>
+                  , and I&apos;ll get back to you as soon as I can. Please note that I won&apos;t respond to any unsolicited messages.
                 </p>
               </div>
             </BlurFade>
           </div>
         </section>
+
       </main>
     </>
   );
