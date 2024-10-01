@@ -206,31 +206,22 @@ export default function Page() {
             <LatestBlogPosts />
           </div>
         </section>
+        
         <section id="contact">
           <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
             <BlurFade delay={BLUR_FADE_DELAY * 16}>
               <div className="space-y-3">
-                <div
-                  className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm"
-                  style={{ backgroundColor: "#222222", color: "#ffffff" }}
-                >
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm bg-gray-900 text-white dark:bg-white dark:text-gray-900">
                   Contact
                 </div>
-                <h2
-                  className="text-3xl font-bold tracking-tighter sm:text-5xl"
-                  style={{ color: "#1a1a1a" }}
-                >
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-gray-900 dark:text-white">
                   Get in Touch
                 </h2>
-                <p
-                  className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
-                  style={{ color: "#4d4d4d" }}
-                >
+                <p className="mx-auto max-w-[600px] text-gray-500 dark:text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Feel free to drop me a DM{" "}
                   <Link
                     href={DATA.contact.social.X.url}
-                    className="text-blue-500 hover:underline"
-                    style={{ textDecoration: "underline", color: "#0066cc" }}
+                    className="text-blue-500 hover:underline dark:text-blue-400"
                   >
                     with any direct questions on twitter
                   </Link>
@@ -240,6 +231,7 @@ export default function Page() {
             </BlurFade>
           </div>
         </section>
+
 
       </main>
     </>

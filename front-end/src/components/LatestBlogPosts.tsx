@@ -40,7 +40,7 @@ const fetchLatestBlogPosts = async (): Promise<BlogPost[]> => {
         name,
         avatarSrc
       }
-    }[0...5]  // Fetch the last 5 posts
+    }[0...5] 
   `;
 
     try {
@@ -60,11 +60,11 @@ const LatestBlogPosts: React.FC = async () => {
 
     return (
         <section>
-            <div className="flex flex-col gap-6 border-b border-gray-200 dark:border-gray-700 pb-5">
+            <div className="flex flex-col gap-6 pb-5">
                 {posts.map((post: BlogPost, index: number) => (
                     <BlurFade delay={0.04 * 13 + index * 0.05} key={post.slug.current}>
                         <Link href={`/blog/${post.slug.current}`}>
-                            <div className="w-full flex flex-col">
+                            <div className="w-full flex flex-col pb-4 mb-4 border-b border-gray-200 dark:border-gray-700"> {/* Added border here */}
                                 <h3 className="text-2xl font-bold tracking-tight mb-2">{post.title}</h3>
                                 <p className="text-gray-600 dark:text-gray-300 mb-2">
                                     {post.body ? `${portableTextToPlainText(post.body).slice(0, 150)}...` : ""}
@@ -83,7 +83,7 @@ const LatestBlogPosts: React.FC = async () => {
             <div className="mt-4 text-center">
                 <BlurFade delay={0.04 * 13}>
                     <Link href="/blog"
-                        className="text-gray-500 hover:text-gray-700 transition-colors duration-300 flex items-center justify-center" 
+                        className="text-gray-500 hover:text-gray-700 transition-colors duration-300 flex items-center justify-center"
                     >
                         View All Posts
                         <ArrowRightIcon className="ml-2" />

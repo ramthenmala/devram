@@ -104,7 +104,7 @@ export default async function BlogPage({ params }: { params: { page: string } })
   return (
     <section>
       <BlurFade delay={0.04}>
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <div className="flex flex-row gap-6 items-center justify-center space-y-4 text-center mb-10">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               Blog
@@ -116,13 +116,13 @@ export default async function BlogPage({ params }: { params: { page: string } })
         </div>
       </BlurFade>
 
-      <div className="flex gap-6 border-b border-gray-200 dark:border-gray-700 pb-5 mt-12">
+      <div className="flex flex-col gap-6 pb-5">
         {posts
           .sort((a: BlogPost, b: BlogPost) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
           .map((post: BlogPost, index: number) => (
             <BlurFade delay={0.04 * 2 + index * 0.05} key={post.slug.current}>
-              <Link href={`/blog/${post.slug.current}`} >
-                <div className="w-full flex flex-col">
+              <Link href={`/blog/${post.slug.current}`}>
+                <div className="w-full flex flex-col pb-8 mb-4 border-b border-gray-200 dark:border-gray-700"> 
                   <h2 className="text-3xl font-bold tracking-tight mb-4 title">{post.title}</h2>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
                     {post.body ? `${portableTextToPlainText(post.body).slice(0, 150)}...` : ""}
@@ -136,6 +136,7 @@ export default async function BlogPage({ params }: { params: { page: string } })
               </Link>
             </BlurFade>
           ))}
+
       </div>
 
       <div className="flex justify-center mt-10 space-x-2">
