@@ -9,6 +9,7 @@ import { calculateReadingTime, portableTextToPlainText } from '@/lib/utils';
 import BlurFade from "@/components/magicui/blur-fade";
 import ListenButton from '@/components/ListenButton';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 
 interface Author {
@@ -226,27 +227,26 @@ export default async function Blog({ params }: { params: { slug: string } }) {
       <div className="flex justify-between mt-10">
         {post.previousPost && (
           <BlurFade delay={0.16}>
-            <a
-              href={`/blog/${post.previousPost.slug.current}`}
-              className="flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 hover:border-gray-600 dark:hover:border-gray-400 transition-colors duration-200 ease-in-out"
-            >
-              <ArrowLeftIcon className="h-5 w-5" />
-              <span>Previous: {post.previousPost.title}</span>
-            </a>
+            <Link href={`/blog/${post.previousPost.slug.current}`} passHref>
+              <div className="flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 hover:border-gray-600 dark:hover:border-gray-400 transition-colors duration-200 ease-in-out cursor-pointer">
+                <ArrowLeftIcon className="h-5 w-5" />
+                <span>Previous: {post.previousPost.title}</span>
+              </div>
+            </Link>
           </BlurFade>
         )}
         {post.nextPost && (
           <BlurFade delay={0.16}>
-            <a
-              href={`/blog/${post.nextPost.slug.current}`}
-              className="flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 hover:border-gray-600 dark:hover:border-gray-400 transition-colors duration-200 ease-in-out"
-            >
-              <span>Next: {post.nextPost.title}</span>
-              <ArrowRightIcon className="h-5 w-5" />
-            </a>
+            <Link href={`/blog/${post.nextPost.slug.current}`} passHref>
+              <div className="flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 hover:border-gray-600 dark:hover:border-gray-400 transition-colors duration-200 ease-in-out cursor-pointer">
+                <span>Next: {post.nextPost.title}</span>
+                <ArrowRightIcon className="h-5 w-5" />
+              </div>
+            </Link>
           </BlurFade>
         )}
       </div>
+
     </section>
   );
 }
