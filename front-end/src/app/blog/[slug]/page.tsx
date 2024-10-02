@@ -11,7 +11,6 @@ import ListenButton from '@/components/ListenButton';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-
 interface Author {
   name: string;
   image?: {

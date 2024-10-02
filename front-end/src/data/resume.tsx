@@ -241,5 +241,28 @@ export const DATA = {
       video:
         "https://firebasestorage.googleapis.com/v0/b/devram-12f0b.appspot.com/o/devram-nextjsapi.mp4?alt=media&token=ed8ababe-729d-4b56-9484-e4960c9f4be1",
     },
+    {
+      title: "Appooppanthaadi",
+      href: "https://appooppanthaadi.com/",
+      dates: "March 2023",
+      active: true,
+      description:
+        "Introducing Appooppanthaadi, a travel agency exclusively for women, designed to empower through unforgettable journeys. Built with WordPress, enhanced by JavaScript, and styled with CSS, it offers user-friendly navigation and a stunning design. The site incorporates SEO best practices to boost visibility, ensuring a broader reach for its audience.",
+      technologies: [
+        "Wordpress",
+        "Javascript",
+        "CSS",
+        "SEO",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://appooppanthaadi.com/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "https://firebasestorage.googleapis.com/v0/b/devram-12f0b.appspot.com/o/devram-projects.appooppanthaadi.mp4?alt=media&token=a5761e06-43bb-4129-85d6-5dff95604dc0",
+    },
   ],
 } as const;
