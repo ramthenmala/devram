@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Full Stack Software Engineer skilled in Node.js, JavaScript, React, and Next.js. Passionate about building solutions and supporting others.",
   summary:
-    "I am a passionate developer specializing in innovative digital solutions that enhance user experiences. Proficient in React.js, Next.js, D3.js, and Node.js, I create responsive applications and interactive e-learning features using HTML, CSS, and JavaScript. Committed to code quality, I focus on refactoring and thorough documentation. I believe in mentorship and collaboration to foster growth, continuously seeking new challenges to improve my skills and contribute to impactful projects.",
+    "I am a passionate developer specializing in React.js, Node.js, JavaScript, and CSS, with a strong focus on building scalable digital solutions and enhancing user experiences. Proficient in cloud technologies and unit testing libraries like Jest and Mocha, I ensure reliable, high-performance code. I've contributed to large-scale projects for clients such as Lloyds, AXA UK, Sharjah Police, and Ynoox GmbH, developing innovative insurance platforms and secure, responsive web applications. I prioritize clean, maintainable code through refactoring and thorough documentation, while also embracing mentorship and collaboration to foster growth. Continuously seeking new challenges, I aim to enhance my skills and deliver impactful projects in both team-based and independent environments.",
   avatarUrl: "/ramkumar-narayana-swamy.jpg",
   skills: [
     "React",
@@ -82,7 +82,7 @@ export const DATA = {
       start: "Sep 2019",
       end: "Present",
       description:
-        "I successfully led a team of 10 development professionals, fostering collaboration and innovation. I provided technical leadership through mentorship in Node.js and React.js, encouraging growth in skills like React Testing Library. Additionally, I prepared detailed documentation and reports on code status and maintenance, ensuring clarity and accessibility for the team.",
+        "I am a full-stack developer with expertise in React.js, Node.js, JavaScript, CSS, and cloud technologies. I have contributed to large-scale projects such as Lloyds and AXA UK, where I worked on developing and maintaining complex, scalable web applications. My experience includes using React Testing Library and Jest to ensure high-quality code, along with preparing detailed documentation and reports on code status and maintenance. I focus on delivering responsive and secure solutions while continuously improving performance and user experience.",
     },
     {
       company: "PIT Solutions",
@@ -94,7 +94,7 @@ export const DATA = {
       start: "Aug 2015",
       end: "Aug 2019",
       description:
-        "Led a team of 8 development professionals in designing the front-end architecture and conducting research for the Sharjah Police website and HR Management System (HRMS) using React. I extensively utilized React.js, D3.js, and Node.js for JavaScript object and array manipulations. Additionally, I focused on building a secure, scalable, reliable, and extensible web application for both web and tablet devices using React.js, Next.js, and CSS.",
+        "As a full-stack developer, I contributed to the Sharjah Police website and HR Management System (HRMS), utilizing React.js, D3.js, and Node.js for efficient JavaScript object and array manipulations. I focused on building secure, scalable, and reliable web applications for both web and tablet devices, leveraging technologies like React.js, Next.js, and CSS to create an extensible and responsive user experience.",
     },
     {
       company: "DoubleSpring Media",
@@ -106,7 +106,7 @@ export const DATA = {
       start: "Aug 2013",
       end: "Aug 2015",
       description:
-        "Developed fully functional, responsive prototypes while implementing API integrations and performing code refactoring. Collaborated with technical authors to create detailed technical specifications and write comprehensive operational documentation.",
+        "I developed fully functional, responsive prototypes with seamless **API integrations**, ensuring smooth data flow and user interaction. In parallel, I focused on **code refactoring**, optimizing performance and maintainability. Collaborating closely with technical authors, I contributed to crafting detailed **technical specifications** and comprehensive **operational documentation**, providing clear guidelines and ensuring the technical accuracy and accessibility of the project's development and deployment processes.",
     },
     {
       company: "OptioLogic Technologies Pvt Ltd",
@@ -118,7 +118,7 @@ export const DATA = {
       start: "Apr 2012",
       end: "Aug 2013",
       description:
-        "Designed and developed new e-learning features using HTML, CSS, and JavaScript while preparing thorough documentation. Focused on creating highly interactive e-learning courses to enhance user engagement and learning experiences.",
+        "I designed and developed innovative e-learning features utilizing HTML, CSS, and JavaScript, with a strong emphasis on enhancing user engagement and learning experiences. By creating highly interactive e-learning courses, I aimed to foster an immersive educational environment. Additionally, I prepared thorough documentation to ensure clarity and accessibility for both users and stakeholders, providing essential insights into the features and functionality implemented in the courses.",
     },
   ],
   education: [
@@ -195,7 +195,7 @@ export const DATA = {
       dates: "June 2023",
       active: true,
       description:
-        "Motionjs with Reactjs Portfolio",
+        "My portfolio highlights projects that integrate Motion.js with React.js to create dynamic and engaging user interfaces. Each project showcases seamless animations that enhance user experience.",
       technologies: [
         "ReactJs",
         "Javascript",
@@ -222,7 +222,7 @@ export const DATA = {
       dates: "April 2022",
       active: true,
       description:
-        "Rest API with Node.js, Express, TypeScript, MongoDB with Typegoose Resources",
+        "I developed a robust **REST API** using **Node.js**, **Express**, and **TypeScript**, with **MongoDB** as the database and **Typegoose** for seamless data modeling. This setup ensures efficient data handling and enhances type safety throughout the application, allowing for scalable and maintainable backend solutions.",
       technologies: [
         "Typescript",
         "Nodejs",
