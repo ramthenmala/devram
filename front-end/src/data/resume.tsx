@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Full Stack Software Engineer skilled in Node.js, JavaScript, React, and Next.js. Passionate about building solutions and supporting others.",
   summary:
-    "I am a passionate developer specializing in React.js, Node.js, JavaScript, and CSS, with a strong focus on building scalable digital solutions and enhancing user experiences. Proficient in cloud technologies and unit testing libraries like Jest and Mocha, I ensure reliable, high-performance code. I've contributed to large-scale projects for clients such as Lloyds, AXA UK, Sharjah Police, and Ynoox GmbH, developing innovative insurance platforms and secure, responsive web applications. I prioritize clean, maintainable code through refactoring and thorough documentation, while also embracing mentorship and collaboration to foster growth. Continuously seeking new challenges, I aim to enhance my skills and deliver impactful projects in both team-based and independent environments.",
+    "I am a passionate developer specializing in React.js, Node.js, JavaScript, and CSS, with a strong focus on building scalable digital solutions and enhancing user experiences. Proficient in cloud technologies and unit testing libraries like Jest and Mocha, I ensure reliable, high-performance code. I utilize SonarQube and SonarLint to maintain code quality, and I implement NexusIQ, Snyk, and the Aqua Scanner Docker image to effectively address security vulnerabilities. I've contributed to large-scale projects for clients such as Lloyds, AXA UK, Sharjah Police, and Ynoox GmbH, developing innovative insurance platforms and secure, responsive web applications. I prioritize clean, maintainable code through refactoring and thorough documentation while embracing mentorship and collaboration to foster growth. Continuously seeking new challenges, I aim to enhance my skills and deliver impactful projects in both team-based and independent environments.",
   avatarUrl: "/ramkumar-narayana-swamy.jpg",
   skills: [
     "React",
@@ -106,7 +106,7 @@ export const DATA = {
       start: "Aug 2013",
       end: "Aug 2015",
       description:
-        "I developed fully functional, responsive prototypes with seamless **API integrations**, ensuring smooth data flow and user interaction. In parallel, I focused on **code refactoring**, optimizing performance and maintainability. Collaborating closely with technical authors, I contributed to crafting detailed **technical specifications** and comprehensive **operational documentation**, providing clear guidelines and ensuring the technical accuracy and accessibility of the project's development and deployment processes.",
+        "I developed fully functional, responsive prototypes with seamless API integrations, ensuring smooth data flow and user interaction. In parallel, I focused on code refactoring, optimizing performance and maintainability. Collaborating closely with technical authors, I contributed to crafting detailed technical specifications and comprehensive operational documentation, providing clear guidelines and ensuring the technical accuracy and accessibility of the project's development and deployment processes.",
     },
     {
       company: "OptioLogic Technologies Pvt Ltd",
