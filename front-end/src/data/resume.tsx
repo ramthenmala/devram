@@ -8,7 +8,7 @@ export const DATA = {
   location: "Halifax, UK",
   locationLink: "https://goo.gl/maps/FFyNdrEcEukEtqHXAo",
   description:
-    "Full Stack Software Engineer skilled in Node.js, JavaScript, React, and Next.js, with expertise in cloud technologies such as Azure and GCP and unit testing libraries. Passionate about building innovative digital solutions and supporting others through mentorship and collaboration, I prioritize code quality and security while tackling new challenges to contribute to impactful projects.",
+    "Full Stack Software Engineer skilled in Node.js, JavaScript, React, and Next.js, with expertise in Azure, GCP, and unit testing. Passionate about building solutions, mentoring, and ensuring code quality.",
   summary:
     "I am a passionate developer specializing in React.js, Node.js, JavaScript, and CSS, with a strong focus on building scalable digital solutions and enhancing user experiences. Proficient in cloud technologies and unit testing libraries like Jest, React Testing Library and Enzyme, I ensure reliable, high-performance code. I utilize SonarQube and SonarLint to maintain code quality, and I implement NexusIQ, Snyk, and the Aqua Scanner Docker image to effectively address security vulnerabilities. I've contributed to large-scale projects for clients such as Lloyds, AXA UK, Sharjah Police, and Ynoox GmbH, developing innovative insurance platforms and secure, responsive web applications. I prioritize clean, maintainable code through refactoring and thorough documentation while embracing mentorship and collaboration to foster growth. Continuously seeking new challenges, I aim to enhance my skills and deliver impactful projects in both team-based and independent environments.",
   avatarUrl: "/ramkumar-narayana-swamy.jpg",
