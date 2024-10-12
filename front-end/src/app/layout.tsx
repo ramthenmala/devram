@@ -42,6 +42,18 @@ export default function RootLayout({
           href="/favicons/safari-pinned-tab.svg"
           rel="mask-icon"
         />
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6VX18PZ8"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-TL6VX18PZ8');
+            `,
+          }}
+        />
       </head>
       <body
         className={cn(
