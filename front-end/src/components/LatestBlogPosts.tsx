@@ -64,13 +64,17 @@ const LatestBlogPosts: React.FC = async () => {
                 {posts.map((post: BlogPost, index: number) => (
                     <BlurFade delay={0.04 * 13 + index * 0.05} key={post.slug.current}>
                         <Link href={`/blog/${post.slug.current}`}>
-                            <div className="w-full flex flex-col pb-4 mb-4 border-b border-gray-200 dark:border-gray-700"> {/* Added border here */}
-                                <h3 className="text-2xl font-bold tracking-tight mb-2">{post.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-300 mb-2">
+                            <div className="w-full flex flex-col pb-4 border-b border-gray-200 dark:border-gray-700">
+                                <h2 className="text-xl font-bold tracking-tight title">{post.title}</h2>
+                                <p className="text-gray-600 dark:text-gray-300 mb-4">
                                     {post.body ? `${portableTextToPlainText(post.body).slice(0, 150)}...` : ""}
                                 </p>
-                                <p className="h-6 text-muted-foreground">
-                                    {new Date(post.publishedAt).toLocaleDateString()}
+                                <p className="h-6 text-muted-foreground text-sm">
+                                    {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                                        year: 'numeric',
+                                        month: 'long',
+                                        day: 'numeric',
+                                    })}
                                     <span className="mx-2 text-muted-foreground">•</span>
                                     {post.readTime} min read
                                 </p>

@@ -93,7 +93,7 @@ const fetchBlogPosts = async (page: number): Promise<{ posts: BlogPost[], total:
   }
 };
 
-const pageSize = 5;
+const pageSize = 10;
 
 export default async function BlogPage({ params }: { params: { page: string } }) {
   const currentPage = parseInt(params.page) || 1;
@@ -122,13 +122,17 @@ export default async function BlogPage({ params }: { params: { page: string } })
           .map((post: BlogPost, index: number) => (
             <BlurFade delay={0.04 * 2 + index * 0.05} key={post.slug.current}>
               <Link href={`/blog/${post.slug.current}`}>
-                <div className="w-full flex flex-col pb-8 mb-4 border-b border-gray-200 dark:border-gray-700"> 
-                  <h2 className="text-3xl font-bold tracking-tight mb-4 title">{post.title}</h2>
+                <div className="w-full flex flex-col pb-4 border-b border-gray-200 dark:border-gray-700"> 
+                  <h2 className="text-xl font-bold tracking-tight title">{post.title}</h2>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
                     {post.body ? `${portableTextToPlainText(post.body).slice(0, 150)}...` : ""}
                   </p>
-                  <p className="h-6 text-muted-foreground">
-                    {new Date(post.publishedAt).toLocaleDateString()}
+                  <p className="h-6 text-muted-foreground text-sm">
+                    {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
                     <span className="mx-2 text-muted-foreground">•</span>
                     {post.readTime} min read
                   </p>

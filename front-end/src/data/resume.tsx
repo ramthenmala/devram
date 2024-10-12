@@ -265,4 +265,57 @@ export const DATA = {
       video: "https://firebasestorage.googleapis.com/v0/b/devram-12f0b.appspot.com/o/devram-projects.appooppanthaadi.mp4?alt=media&token=a5761e06-43bb-4129-85d6-5dff95604dc0",
     },
   ],
+  projectsWorked: [
+    {
+      title: "Lloyds",
+      dates: "Jul 2021 - Present",
+      location: "Halifax, UK",
+      description:
+        "Developed a modern web application using React.js, TypeScript, and Webpack, following a micro-frontend architecture. Built scalable microservices with Node.js and implemented custom, responsive styling. The application is deployed and managed in a Microsoft Azure cloud environment, demonstrating strong expertise in cloud infrastructure and services.",
+      image:
+        "/devram-projects-lloyds.jpg",
+      mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
+      links: [],
+    },
+    {
+      title: "AXA UK, Insurance",
+      dates: "Sep 2019 - Dec 2021",
+      location: "Trivandrum, Kerala",
+      description:
+        "Developed a modern web application for AXA UK using React.js, TypeScript, and Webpack. Implemented custom, responsive styling with SCSS to deliver a seamless user experience. The application is deployed and managed in a Microsoft Azure cloud environment, showcasing strong expertise in cloud infrastructure and services.",
+      image:
+        "/devram-project-workedon-axa-uk.jpg",
+      links: [],
+    },
+    {
+      title: "Sharjah Police",
+      dates: "Jan 2018 - Aug 2019",
+      location: "Trivandrum, Kerala",
+      description:
+        "Led the Front-End architecture and research for the Sharjah Police website and HRMS, focusing on building a secure, scalable, reliable, and extensible web application for both web and tablet devices. Extensively used React.js, Next.js, and CSS for development, along with D3.js for advanced JavaScript object and array manipulations. Additionally, integrated Strapi for efficient CMS management. My work ensured a responsive, high-performance interface tailored to the unique needs of the project.",
+      image:
+        "/devram-projects-sharjah-police.jpg",
+      links: [],
+    }, ,
+    {
+      title: "Ynoox GmBh",
+      dates: "Aug 2015 - Dec 2017",
+      location: "Trivandrum, Kerala",
+      description:
+        "I specialize in creating responsive prototypes that align with business requirements, using HTML/HTML5, CSS3, JavaScript, and jQuery. I have introduced wireframing and information architecture best practices to improve team efficiency. Additionally, I developed a custom JavaScript email template builder with pre-saved email templates and custom HTML. One of my notable projects includes designing a front-end prototype for an insurance billing web platform.",
+      image:
+        "/devram-projects-ynoox.jpg",
+      links: [],
+    },
+    {
+      title: "Blackmonk",
+      dates: "Aug 2013 - Jul 2015",
+      location: "Bengaluru, Karnataka",
+      description:
+        "Crafted responsive prototypes using HTML/HTML5, CSS3, JavaScript, and jQuery, and designed front-end functionality for over 20 modules. Managed key e-commerce platform features like the shopping cart, quick view, and checkout page, leveraging Bootstrap CSS and JavaScript components.",
+      image:
+        "/devram-blackmonk-logo.jpg",
+      links: [],
+    },
+  ],
 } as const;

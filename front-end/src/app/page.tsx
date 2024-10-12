@@ -9,6 +9,7 @@ import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import type { Metadata } from "next";
+import { ProjectsWorked } from "@/components/ProjectsWorked";
 
 export const metadata: Metadata = {
   title: "Ram | JavaScript Developer | Portfolio & Insights",
@@ -182,7 +183,47 @@ export default function Page() {
             </div>
           </div>
         </section>
-        <section id="hackathons">
+
+        <section id="projectsworked">
+          <div className="space-y-12 w-full py-12">
+            <BlurFade delay={BLUR_FADE_DELAY * 13}>
+              <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                <div className="space-y-2">
+                  <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                    Projects I worked on
+                  </div>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                    Key Projects & Technical Expertise
+                  </h2>
+                  <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    I have worked on projects like the Sharjah Police website and HRMS, leading front-end development using React.js, Next.js, D3.js, and Sanity.io for CMS management. I also crafted responsive prototypes with HTML/HTML5, CSS3, JavaScript, and jQuery, and developed key e-commerce features such as shopping carts and checkout pages using Bootstrap CSS and JavaScript.
+                  </p>
+                </div>
+              </div>
+            </BlurFade>
+            <BlurFade delay={BLUR_FADE_DELAY * 14}>
+              <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
+                {DATA.projectsWorked.map((project, id) => (
+                  <BlurFade
+                    key={project?.title}
+                    delay={BLUR_FADE_DELAY * 15 + id * 0.05}
+                  >
+                    <ProjectsWorked
+                      title={project?.title}
+                      description={project?.description}
+                      location={project?.location}
+                      dates={project?.dates}
+                      image={project?.image}
+                      links={project?.links}
+                    />
+                  </BlurFade>
+                ))}
+              </ul>
+            </BlurFade>
+          </div>
+        </section>
+
+        <section id="blog-posts">
           <div className="space-y-12 w-full py-12">
             <BlurFade delay={BLUR_FADE_DELAY * 13}>
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -206,7 +247,7 @@ export default function Page() {
             <LatestBlogPosts />
           </div>
         </section>
-        
+
         <section id="contact">
           <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
             <BlurFade delay={BLUR_FADE_DELAY * 16}>
