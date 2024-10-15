@@ -44,7 +44,6 @@ interface PostProps {
   };
 }
 
-// Fetch post data
 const fetchPost = async (slug: string) => {
   const query = `*[_type == "post" && slug.current == $slug][0]{
     title,
@@ -81,7 +80,6 @@ const fetchPost = async (slug: string) => {
   return post;
 };
 
-// Generate metadata dynamically
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const post: PostProps = await fetchPost(params.slug);
 
@@ -100,7 +98,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description: `Read "${post.title}" by ${post.author.name}. Discover insights on JavaScript, web development, and coding tutorials.`,
       images: [
         {
-          url: post.mainImage?.asset.url || '/default-image.jpg', // Provide a default image if none exists
+          url: post.mainImage?.asset.url || '/default-image.jpg',
           width: 1200,
           height: 600,
           alt: post.title,
@@ -121,8 +119,8 @@ export default async function Blog({ params }: { params: { slug: string } }) {
   const post: PostProps = await fetchPost(slug);
 
   if (!post) {
-    // Optionally handle post not found
-    return null; // or a not found component
+
+    return null;
   }
 
   const readTime = calculateReadingTime(portableTextToPlainText(post.body));
@@ -133,7 +131,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
   };
 
   const CodeBlock = ({ code, language }: { code: string; language: string }) => (
-    <SyntaxHighlighter language={language} style={tomorrowNightBright} className="my-4 bg-gray-800 text-white rounded-md">
+    <SyntaxHighlighter language={language} style={tomorrowNightBright} className="my-4 bg-gray-800 text-white rounded-md" >
       {code}
     </SyntaxHighlighter>
   );
