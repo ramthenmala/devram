@@ -1,8 +1,8 @@
 import LatestBlogPosts from "@/components/LatestBlogPosts";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { ProjectCard } from "@/components/project-card";
-import { ResumeCard } from "@/components/resume-card";
+import { ProjectCard } from "@/components/ProjectCard";
+import { ResumeCard } from "@/components/ResumeCard";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";

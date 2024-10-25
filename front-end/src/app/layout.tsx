@@ -1,8 +1,9 @@
-import Navbar from "@/components/navbar";
-import { ThemeProvider } from "@/components/theme-provider";
+import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Inter as FontSans } from "next/font/google";
+import Script from "next/script"; 
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -43,17 +44,19 @@ export default function RootLayout({
           rel="mask-icon"
         />
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6VX18PZ8"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-TL6VX18PZ8');
-            `,
-          }}
+        {/* Load Google Analytics script using next/script */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-TL6VX18PZ8"
         />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TL6VX18PZ8');
+          `}
+        </Script>
       </head>
       <body
         className={cn(
