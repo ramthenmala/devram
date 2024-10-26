@@ -1,9 +1,10 @@
-import Navbar from "@/components/Navbar";
+
+import { Inter as FontSans } from "next/font/google";
+import Script from "next/script";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import { Inter as FontSans } from "next/font/google";
-import Script from "next/script"; 
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 const fontSans = FontSans({
