@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import client from '../../../client';
 import Link from 'next/link';
 import { calculateReadingTime, portableTextToPlainText } from '@/lib/utils';
@@ -28,7 +28,7 @@ interface BlogPost {
   readTime?: number;
 }
 
-const fetchBlogPosts = async (offset: number): Promise<BlogPost[]> => {
+const fetchBlogPosts = async (): Promise<BlogPost[]> => {
   const query = `
     *[_type == "post"] | order(publishedAt desc) {
       title,
@@ -44,7 +44,7 @@ const fetchBlogPosts = async (offset: number): Promise<BlogPost[]> => {
         name,
         avatarSrc
       }
-    }[${offset}...${offset + 10}]
+    }
   `;
 
   try {
@@ -79,57 +79,22 @@ const useDebounce = (value: string, delay: number) => {
 export default function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [hasMore, setHasMore] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
-  const observerRef = useRef<HTMLDivElement>(null);
-  const uniqueSlugs = useRef(new Set());
 
-  const debouncedSearchTerm = useDebounce(searchTerm, 300); // Adjust delay as needed
-
-  const loadMorePosts = async () => {
-    if (loading || !hasMore) return;
-
-    setLoading(true);
-    const currentOffset = posts.length;
-    const newPosts = await fetchBlogPosts(currentOffset);
-
-    const filteredPosts = newPosts.filter((post) => {
-      if (uniqueSlugs.current.has(post.slug.current)) {
-        return false;
-      } else {
-        uniqueSlugs.current.add(post.slug.current);
-        return true;
-      }
-    });
-
-    if (filteredPosts.length < 10) setHasMore(false);
-
-    setPosts((prevPosts) => [...prevPosts, ...filteredPosts]);
-    setFilteredPosts((prevPosts) => [...prevPosts, ...filteredPosts]);
-    setLoading(false);
-  };
+  const debouncedSearchTerm = useDebounce(searchTerm, 300);
 
   useEffect(() => {
-    loadMorePosts();
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && hasMore && !loading) {
-          loadMorePosts();
-        }
-      },
-      { threshold: 1 }
-    );
-
-    if (observerRef.current) observer.observe(observerRef.current);
-
-    return () => {
-      if (observerRef.current) observer.unobserve(observerRef.current);
+    const loadPosts = async () => {
+      setLoading(true);
+      const allPosts = await fetchBlogPosts();
+      setPosts(allPosts);
+      setFilteredPosts(allPosts);
+      setLoading(false);
     };
-  }, [hasMore, loading]);
+
+    loadPosts();
+  }, []);
 
   useEffect(() => {
     const lowercasedFilter = debouncedSearchTerm.toLowerCase();
@@ -188,15 +153,8 @@ export default function BlogPage() {
         ))}
       </div>
 
-      <div ref={observerRef} className="mt-10" />
-
-      {loading && (
-        <Loader />
-      )}
-
-      {!hasMore && (
-        <NoMorePosts />
-      )}
+      {loading && <Loader />}
+      {!loading && filteredPosts.length === 0 && <NoMorePosts />}
     </section>
   );
 }
