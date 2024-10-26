@@ -4,7 +4,7 @@ import Script from "next/script";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/Navbar";
+import Navbar from "../components/Navbar";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -45,7 +45,6 @@ export default function RootLayout({
           rel="mask-icon"
         />
 
-        {/* Load Google Analytics script using next/script */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-TL6VX18PZ8"
