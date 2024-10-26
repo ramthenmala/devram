@@ -4,7 +4,7 @@ import Script from "next/script";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 const fontSans = FontSans({
