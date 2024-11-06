@@ -156,6 +156,33 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Node.js Authentication REST API",
+      href: "https://github.com/ramthenmala/auth-api",
+      date: "Nov 2024",
+      active: true,
+      description:
+        "A fully functional authentication REST API built with Node.js, TypeScript, and Typegoose. This API supports user registration, email verification, password recovery, and JWT-based authentication (access and refresh tokens). It’s designed for security and scalability, making it ideal for modern web applications requiring robust authentication flows.",
+      technologies: [
+        "Node.js",
+        "TypeScript",
+        "Typegoose",
+        "Express",
+        "Zod",
+        "argon2",
+        "JWT",
+        "Nodemailer",
+      ],
+      links: [
+        {
+          type: "GitHub Repository",
+          href: "https://github.com/ramthenmala/auth-api",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "https://firebasestorage.googleapis.com/v0/b/devram-12f0b.appspot.com/o/dev-ram-api-project.mp4?alt=media&token=d10698d1-b751-40a1-b048-5abd8fa76e72",
+    },
+    {
       title: "Next.js Corporate GSAP Animation Theme",
       href: "https://nextjs-corporate.vercel.app/",
       dates: "Jan 2022",
