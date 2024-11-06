@@ -158,7 +158,7 @@ export const DATA = {
     {
       title: "Node.js Authentication REST API",
       href: "https://github.com/ramthenmala/auth-api",
-      date: "Nov 2024",
+      dates: "Nov 2024",
       active: true,
       description:
         "A fully functional authentication REST API built with Node.js, TypeScript, and Typegoose. This API supports user registration, email verification, password recovery, and JWT-based authentication (access and refresh tokens). It’s designed for security and scalability, making it ideal for modern web applications requiring robust authentication flows.",
