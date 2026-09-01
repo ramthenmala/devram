@@ -109,8 +109,7 @@ export const DATA = {
       badges: [],
       location: "Trivandrum, Kerala, India",
       title: "Associate Architect",
-      // TODO: add /public/devram-reflections.jpg — falls back to initial "R" until then
-      logoUrl: "",
+      logoUrl: "/devram-reflections.svg",
       start: "May 2025",
       end: "Present",
       description:
