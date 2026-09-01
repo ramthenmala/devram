@@ -18,6 +18,7 @@ interface ResumeCardProps {
   badges?: readonly string[];
   period: string;
   description?: string;
+  defaultExpanded?: boolean;
 }
 export const ResumeCard = ({
   logoUrl,
@@ -28,8 +29,9 @@ export const ResumeCard = ({
   badges,
   period,
   description,
+  defaultExpanded = false,
 }: ResumeCardProps) => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(defaultExpanded);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (description) {
@@ -88,7 +90,10 @@ export const ResumeCard = ({
           </CardHeader>
           {description && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
+              initial={{
+                opacity: defaultExpanded ? 1 : 0,
+                height: defaultExpanded ? "auto" : 0,
+              }}
               animate={{
                 opacity: isExpanded ? 1 : 0,
 
