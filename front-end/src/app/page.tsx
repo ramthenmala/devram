@@ -260,14 +260,14 @@ export default function Page() {
                   Get in Touch
                 </h2>
                 <p className="mx-auto max-w-[600px] text-gray-500 dark:text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Feel free to drop me a DM{" "}
+                  Feel free to reach me{" "}
                   <Link
-                    href={DATA.contact.social.X.url}
+                    href={`mailto:${DATA.contact.email}`}
                     className="text-blue-500 hover:underline dark:text-blue-400"
                   >
-                    with any direct questions on twitter
+                    {DATA.contact.email}
                   </Link>
-                  , and I&apos;ll get back to you as soon as I can. Please note that I won&apos;t respond to any unsolicited messages.
+                  {" "}with any direct questions, and I&apos;ll get back to you as soon as I can. Please note that I won&apos;t respond to any unsolicited messages.
                 </p>
               </div>
             </BlurFade>
